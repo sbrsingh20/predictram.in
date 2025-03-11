@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Advisor Agreement</title>
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Investment Advisor Agreement</h1>
+    <div class="agreement-content">
+        <p><strong>Investment Advisor Agreement</strong></p>
+        <p>This Investment Advisor Agreement ("Agreement") is made and entered into by and between:</p>
+        <p>Client: [Client Name], [Client Address]</p>
+        <p>Investment Advisor: [Advisor Name], [Firm Name]</p>
+
+        <h3>Scope of Services</h3>
+        <p>The Advisor agrees to provide investment advisory services to the Client, which include the following:</p>
+        <ul>
+            <li>Asset allocation and portfolio management advice</li>
+            <li>Recommendations regarding the purchase, sale, or retention of securities</li>
+            <li>Ongoing monitoring and review of the Client's investment portfolio</li>
+        </ul>
+
+        <h3>Client's Responsibilities</h3>
+        <p>The Client agrees to:</p>
+        <ul>
+            <li>Provide accurate and timely financial information</li>
+            <li>Actively communicate with the Advisor about changes in their financial situation</li>
+            <li>Make the final decision on all investments</li>
+        </ul>
+
+        <h3>Fees and Compensation</h3>
+        <p>The Client agrees to pay the Advisor a fee based on the agreed structure. Payment will be made based on the chosen terms (monthly, quarterly, or annually).</p>
+    </div>
+
+    <h3>Confirm your agreement</h3>
+    <form action="agreement.php" method="POST">
+        <label for="otp">Enter Aadhar OTP to Sign Agreement:</label>
+        <input type="text" name="otp" required><br><br>
+
+        <button type="submit">Sign Agreement</button>
+    </form>
+</div>
+
+</body>
+</html>

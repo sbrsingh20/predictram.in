@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EkYC Process - Verification</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function submitVerification() {
+            const code = document.getElementById('verificationCode').value;
+
+            // Simple check for the verification code (for demonstration)
+            if (code === '1234') {
+                // Display success message
+                document.getElementById('message').innerHTML = 'EkYC Verified Successfully!';
+                document.getElementById('message').style.color = '#4CAF50';
+
+                // Generate PDF of EkYC details
+                generateEKYC();
+            } else {
+                alert('Invalid verification code.');
+            }
+        }
+
+        function generateEKYC() {
+            const name = localStorage.getItem('name');
+            const email = localStorage.getItem('email');
+            const mobile = localStorage.getItem('mobile');
+            const pan = localStorage.getItem('pan');
+            const aadhar = localStorage.getItem('aadhar');
+
+            const pdfContent = `
+                EkYC Details:
+                Name: ${name}
+                Email: ${email}
+                Mobile: ${mobile}
+                PAN: ${pan}
+                AADHAR: ${aadhar}
+            `;
+
+            const doc = new jsPDF();
+            doc.text(pdfContent, 10, 10);
+            doc.save('ekyc_details.pdf');
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <h1>EkYC Process - Verification</h1>
+    <p>Enter the verification code sent to your mobile number:</p>
+    <input type="text" id="verificationCode" required><br><br>
+
+    <button onclick="submitVerification()">Verify</button>
+
+    <!-- Success message will appear here after verification -->
+    <div id="message"></div>
+</body>
+</html>

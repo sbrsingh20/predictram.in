@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eKYC Form</title>
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>eKYC Form</h1>
+    <form action="ekyc.php" method="POST" enctype="multipart/form-data">
+        <label for="name">Full Name:</label>
+        <input type="text" name="name" required><br><br>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" name="dob" required><br><br>
+
+        <label for="address">Address:</label>
+        <input type="text" name="address" required><br><br>
+
+        <label for="photo">Upload Photo:</label>
+        <input type="file" name="photo" accept="image/*" required><br><br>
+
+        <label for="email">Email ID:</label>
+        <input type="email" name="email" required><br><br>
+
+        <label for="mobile">Mobile Number:</label>
+        <input type="text" name="mobile" required><br><br>
+
+        <label for="pan">PAN Number:</label>
+        <input type="text" name="pan" required><br><br>
+
+        <label for="bank_account">Bank Account (Optional):</label>
+        <input type="text" name="bank_account"><br><br>
+
+        <label for="aadhar">Aadhar Number:</label>
+        <input type="text" name="aadhar" required><br><br>
+
+        <label for="otp">Enter Aadhar OTP:</label>
+        <input type="text" name="otp" required><br><br>
+
+        <button type="submit">Submit eKYC</button>
+    </form>
+</div>
+
+</body>
+</html>
