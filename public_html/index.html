@@ -1,78 +1,271 @@
 <!DOCTYPE html>
-<html lang="zxx" class="js">
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-<meta name="author" content="Softnio">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="">
-<!-- Fav Icon  -->
-<link rel="shortcut icon" href="images/favicon.png">
-<!-- Site Title  -->
-<title>PredictRAM</title>
-<!-- Bundle and Base CSS -->
-<link rel="stylesheet" href="assets/css/vendor.bundle.css?ver=1930">
-<link rel="stylesheet" href="assets/css/style.css?ver=1930" id="changeTheme">
-<!-- Extra CSS -->
-<link rel="stylesheet" href="assets/css/theme.css?ver=1930">
-
-
-
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PredictRAM - Risk Management Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0047AB;
+            --secondary: #1E90FF;
+            --accent: #4169E1;
+            --dark-blue: #00008B;
+            --light-blue: #87CEFA;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: white;
+            color: var(--primary);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1000px;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .logo {
+            margin-bottom: 30px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        .logo img {
+            max-width: 220px;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeInUp 1s ease-in-out;
+        }
+        
+        p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            color: var(--dark-blue);
+            animation: fadeInUp 1.2s ease-in-out;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(30, 144, 255, 0.4);
+            animation: pulse 2s infinite;
+        }
+        
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(30, 144, 255, 0.6);
+        }
+        
+        .solutions {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 60px;
+            animation: fadeInUp 1.4s ease-in-out;
+        }
+        
+        .solution {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            width: 200px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--light-blue);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .solution:hover {
+            transform: translateY(-10px);
+            border-color: var(--secondary);
+            box-shadow: 0 15px 30px rgba(30, 144, 255, 0.2);
+        }
+        
+        .solution-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+        
+        .solution h3 {
+            color: var(--primary);
+            font-size: 1.3rem;
+        }
+        
+        .background-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            overflow: hidden;
+        }
+        
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(30, 144, 255, 0.1), rgba(65, 105, 225, 0.1));
+            animation: float 15s infinite;
+        }
+        
+        .shape:nth-child(1) {
+            width: 300px;
+            height: 300px;
+            top: -150px;
+            left: -100px;
+        }
+        
+        .shape:nth-child(2) {
+            width: 200px;
+            height: 200px;
+            bottom: -100px;
+            right: -50px;
+        }
+        
+        .shape:nth-child(3) {
+            width: 150px;
+            height: 150px;
+            bottom: 20%;
+            left: 10%;
+        }
+        
+        .shape:nth-child(4) {
+            width: 100px;
+            height: 100px;
+            top: 30%;
+            right: 10%;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 5px 15px rgba(30, 144, 255, 0.4);
+            }
+            70% {
+                transform: scale(1.05);
+                box-shadow: 0 5px 15px rgba(30, 144, 255, 0.7);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 5px 15px rgba(30, 144, 255, 0.4);
+            }
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            25% {
+                transform: translate(10px, -10px) rotate(5deg);
+            }
+            50% {
+                transform: translate(20px, 10px) rotate(10deg);
+            }
+            75% {
+                transform: translate(-10px, 15px) rotate(5deg);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            p {
+                font-size: 1.1rem;
+            }
+            
+            .solutions {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+            
+            .solution {
+                width: 100%;
+                max-width: 250px;
+            }
+        }
+    </style>
 </head>
-  
-
-
-    <body class="nk-body body-wider theme-dark">
-
-	<div class="nk-wrap">
-        <main class="nk-pages nk-pages-centered tc-light">
-            <header class="text-center py-5">
-                <a href="./" class="logo-lg d-inline-block">
-                    <img src="images/logo-full-white2x.png" srcset="images/logo-full-white2x.png 2x" alt="logo">
-                </a>
-            </header>
-            <div class="my-auto">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-7 col-sm-9">
-                            <div class="text-center">
-                                <div class="countdown-s2 countdown-xl countdown-thin countdown mb-5" data-date="2021/08/10" data-min-text="Minutes" data-sec-text="Seconds"></div>
-                                <h2 class="title title-xl-s2 title-thin"></h2>
-                                <div class="row justify-content-center">
-                                    <div class="col-lg-9 col-sm-10">
-                                        <h2 class="title title-xl-s2 title-thin">For better Risk Management</h2>
-                                <p> CRM for Analyst, Python for Finance<br class="d-none d-md-block"></p>
-                                                                                <h2 class="title title-xl-s2 title-thin">Please Visit <a href="https://predictram.com"><em class=""></em>https://predictram.com</a></h2>
-
-                                                           <li><a href="https://predictram.com"><em class=""></em>https://predictram.com</a></li>
-
-                                            <div class="form-results"></div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <footer class="text-center py-5">
-                <ul class="social mb-4">
-                    <li><a href="https://x.com/predictram"><em class="social-icon fab fa-twitter"></em></a></li>
-                    <li><a href="https://medium.com/@predictram"><em class="social-icon fab fa-medium-m"></em></a></li>
-                    <li><a href="https://predictram.gitbook.io/docs"><em class="social-icon fab fa-github"></em></a></li>
-                </ul>
-                <p class="copyright-text copyright-text-s3">Copyright © 2025 PredictRAM</p>
-            </footer>  
-            <div class="bg-image">
-                <img src="images/shape-z5.png" alt="particle">
-            </div>
-        </main>
+<body>
+    <div class="background-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
     </div>
-	<div class="preloader"><span class="spinner spinner-round"></span></div>
-	
-	<!-- JavaScript -->
-	<script src="assets/js/jquery.bundle.js?ver=1930"></script>
-	<script src="assets/js/scripts.js?ver=1930"></script>
-	<script src="assets/js/charts.js"></script>
+    
+    <div class="container">
+        <div class="logo">
+            <img src="https://predictram.com/images/logo2x.png" alt="PredictRAM Logo">
+        </div>
+        
+        <h1>Making Risk Management Easy</h1>
+        <p>Protecting your valuable assets from uncertainty with innovative AI-powered solutions</p>
+        
+        <a href="https://predictram.com" class="btn">Visit PredictRAM.com</a>
+        
+        <div class="solutions">
+            <div class="solution">
+                <div class="solution-icon">⚖️</div>
+                <h3>Compliance</h3>
+            </div>
+            
+            <div class="solution">
+                <div class="solution-icon">⚙️</div>
+                <h3>Operations</h3>
+            </div>
+            
+            <div class="solution">
+                <div class="solution-icon">👥</div>
+                <h3>CRM</h3>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
